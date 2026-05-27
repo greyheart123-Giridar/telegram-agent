@@ -215,7 +215,7 @@ async def handler(event):
 # START
 # =========================
 
-client.start(phone=phone)
+client.start()
 
 print("Listening for new messages...")
 
