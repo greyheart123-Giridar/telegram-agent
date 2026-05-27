@@ -1,6 +1,8 @@
 from telethon import TelegramClient, events
 import re
 import requests
+import os
+from telethon import TelegramClient, events
 
 # =========================
 # TELEGRAM API
@@ -8,6 +10,7 @@ import requests
 
 api_id = 36130331
 api_hash = '92017a437038fca56df62091e2e468b7'
+phone = '+918125728924'
 
 # =========================
 # BOT TOKEN
@@ -34,6 +37,20 @@ groups = [
 ]
 # Store already posted messages
 posted_messages = set()
+
+
+
+# GET VALUES FROM RENDER ENVIRONMENT VARIABLES
+api_id = os.getenv("API_ID")
+api_hash = os.getenv("API_HASH")
+phone = os.getenv("PHONE")
+
+# CHECK VARIABLES
+if not api_id or not api_hash or not phone:
+    raise Exception("Missing API_ID, API_HASH, or PHONE environment variables")
+
+# CREATE CLIENT
+client = TelegramClient("session", int(api_id), api_hash)
 # =========================
 # CREATE CLIENT
 # =========================
