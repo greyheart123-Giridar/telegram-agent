@@ -31,7 +31,6 @@ channel_username = '@SGShoppingtricks'
 groups = [
     'iamprasadtech',
     'telugutechtuts',
-    'Mastertricky Deals',
     'deals',
     'FreePromos'
 ]
